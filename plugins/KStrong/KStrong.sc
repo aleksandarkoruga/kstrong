@@ -1,10 +1,6 @@
+// without mul and add.
 KStrong : UGen {
-	*ar { |input, gain|
-		/* TODO */
-		^this.multiNew('audio', input, gain);
-	}
-	checkInputs {
-		/* TODO */
-		^this.checkValidInputs;
-	}
+    *ar { arg in = 0.0, del = 3.4234, fb=0.9;
+        ^this.multiNew('audio', in, del, fb);
+    }
 }
